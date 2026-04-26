@@ -29,6 +29,58 @@
       line-height: 1.6;
     }
 
+    /* ── Nav ──────────────────────────────── */
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.55rem 1.5rem;
+      background: rgba(14, 10, 4, 0.93);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(201,162,39,0.12);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+    }
+
+    .nav-logo img {
+      height: 2rem;
+      border-radius: 50%;
+    }
+
+    .nav-logo span {
+      font-size: 0.95rem;
+      letter-spacing: 0.06em;
+      color: var(--parchment);
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: var(--crimson);
+      color: var(--parchment);
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+      padding: 0.45rem 1rem;
+      border-radius: 6px;
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+
+    .nav-cta:hover {
+      background: #a82020;
+    }
+
     /* ── Hero ─────────────────────────────── */
     .hero {
       position: relative;
@@ -128,7 +180,7 @@
       border-bottom: 1px solid rgba(201,162,39,0.1);
     }
 
-.games-grid {
+    .games-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 1.5rem;
@@ -174,7 +226,8 @@
       text-transform: uppercase;
       padding: 0.2rem 0.6rem;
       border-radius: 4px;
-      margin-bottom: 0.75rem;
+      margin-top: 0.4rem;
+      margin-bottom: 0.6rem;
     }
 
     /* ── Campaigns ────────────────────────── */
@@ -259,6 +312,113 @@
       line-height: 1.65;
     }
 
+    /* ── Join ─────────────────────────────── */
+    #join {
+      background: rgba(139,26,26,0.07);
+      border-top: 1px solid rgba(139,26,26,0.2);
+      border-bottom: 1px solid rgba(139,26,26,0.2);
+    }
+
+    .join-paths {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    @media (max-width: 600px) {
+      .join-paths { grid-template-columns: 1fr; }
+    }
+
+    .join-path {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(201,162,39,0.12);
+      border-radius: 8px;
+      padding: 1.75rem 1.5rem;
+    }
+
+    .join-path .path-icon {
+      font-size: 2rem;
+      margin-bottom: 0.65rem;
+    }
+
+    .join-path h3 {
+      font-size: 1.1rem;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .join-path p {
+      font-size: 0.88rem;
+      color: var(--mist);
+      line-height: 1.65;
+    }
+
+    .path-tag {
+      display: inline-block;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      margin-bottom: 0.75rem;
+    }
+
+    .tag-open {
+      background: rgba(74,155,74,0.2);
+      border: 1px solid rgba(74,155,74,0.35);
+      color: #7dcf7d;
+    }
+
+    .tag-closed {
+      background: rgba(100,100,100,0.2);
+      border: 1px solid rgba(150,150,150,0.25);
+      color: #aaa;
+    }
+
+    .join-cta {
+      text-align: center;
+      padding: 2rem;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(201,162,39,0.15);
+      border-radius: 8px;
+    }
+
+    .join-cta p {
+      font-size: 1rem;
+      color: var(--parchment);
+      margin-bottom: 1.25rem;
+      opacity: 0.85;
+    }
+
+    .email-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--crimson);
+      color: var(--parchment);
+      text-decoration: none;
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+      padding: 0.75rem 1.75rem;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .email-btn:hover {
+      background: #a82020;
+      transform: translateY(-1px);
+    }
+
+    .email-address {
+      display: block;
+      margin-top: 0.75rem;
+      font-size: 0.8rem;
+      color: var(--mist);
+      letter-spacing: 0.05em;
+    }
+
     /* ── Where We Meet ────────────────────── */
     .meetup-block {
       display: grid;
@@ -275,12 +435,6 @@
       font-size: clamp(1.6rem, 3vw, 2.4rem);
       color: var(--parchment);
       margin-bottom: 0.5rem;
-    }
-
-    .meetup-info .venue-name {
-      font-size: 1.3rem;
-      color: var(--gold);
-      margin-bottom: 0.25rem;
     }
 
     .meetup-info .venue-location {
@@ -335,6 +489,15 @@
 </head>
 <body>
 
+  <!-- Nav -->
+  <nav class="site-nav">
+    <a class="nav-logo" href="#">
+      <img src="assets/round-bastards-logo.png" alt="Dastardly Bastards">
+      <span>Dastardly Bastards</span>
+    </a>
+    <a class="nav-cta" href="#join">Interested? ✉️</a>
+  </nav>
+
   <!-- Hero -->
   <div class="hero">
     <img class="hero-logo" src="assets/banner-bastards-logo.png" alt="Dastardly Bastards">
@@ -354,9 +517,9 @@
       <div class="games-grid">
 
         <div class="game-card">
-          <div class="primary-tag">Our Main Game</div>
           <div class="icon">🐉</div>
           <h3>Dungeons &amp; Dragons</h3>
+          <div class="primary-tag">Our Main Game</div>
           <p>Our bread and butter. Multiple concurrent campaigns means there's always an adventure to join, whether you're a seasoned veteran or picking up your first d20.</p>
         </div>
 
@@ -364,12 +527,6 @@
           <div class="icon">🃏</div>
           <h3>Magic: The Gathering</h3>
           <p>Commander nights, drafts, and the occasional heated dispute over whether that combo is as broken as it looks. (It is.)</p>
-        </div>
-
-        <div class="game-card">
-          <div class="icon">🎲</div>
-          <h3>Board Games</h3>
-          <p>When we want a break from world-ending stakes, we pull something off the shelf. Strategy, co-op, party — whatever the night calls for.</p>
         </div>
 
       </div>
@@ -406,26 +563,54 @@
     </div>
   </section>
 
+  <!-- Join -->
+  <div id="join">
+    <section>
+      <p class="section-label">Get involved</p>
+      <h2 class="section-title">Interested in Playing?</h2>
+      <div class="divider"></div>
+      <div class="join-paths">
+
+        <div class="join-path">
+          <div class="path-icon">🎲</div>
+          <div class="path-tag tag-open">Open to newcomers</div>
+          <h3>Monthly One-Shots</h3>
+          <p>Once a month we run a self-contained one-shot session — no prior experience needed, no ongoing commitment. It's how most new players get their foot in the door and see if the group is a good fit.</p>
+        </div>
+
+        <div class="join-path">
+          <div class="path-icon">📖</div>
+          <div class="path-tag tag-closed">Not currently recruiting</div>
+          <h3>Full Campaigns</h3>
+          <p>Our active campaigns are mid-story and not set up for new players to drop in. If a spot opens up down the road, we'll reach out to people who've already played a one-shot with us.</p>
+        </div>
+
+      </div>
+
+      <div class="join-cta">
+        <p>Send us an email to introduce yourself, ask questions, or get on the list for the next one-shot.</p>
+        <a class="email-btn" href="mailto:dastardlybastardsdm@gmail.com">✉️ &nbsp; Get in Touch</a>
+        <span class="email-address">dastardlybastardsdm@gmail.com</span>
+      </div>
+    </section>
+  </div>
+
   <!-- Where We Meet -->
   <div style="background: rgba(255,255,255,0.015); border-top: 1px solid rgba(201,162,39,0.08); border-bottom: 1px solid rgba(201,162,39,0.08);">
     <section>
       <div class="meetup-block">
         <div class="meetup-info">
           <p class="section-label">Where to find us</p>
-          <h2>Come Roll With Us</h2>
+          <h2>Where We Play</h2>
           <div class="divider"></div>
           <p class="venue-location">Delta, Ontario</p>
-          <div class="meetup-detail">
-            <span class="icon">✉️</span>
-            <span>Interested in joining? Reach out first — sessions are coordinated by email, not drop-in.</span>
-          </div>
           <div class="meetup-detail">
             <span class="icon">☕</span>
             <span>We got our start at Bastard Coffee House — stop by and they can point you in the right direction.</span>
           </div>
           <div class="meetup-detail">
-            <span class="icon">⚠️</span>
-            <span>Please don't show up expecting to play without getting in touch first.</span>
+            <span class="icon">✉️</span>
+            <span>Sessions are coordinated by email — please reach out before showing up to play.</span>
           </div>
         </div>
         <div class="map-wrapper">
@@ -437,7 +622,7 @@
 
   <!-- Footer -->
   <footer>
-    <p><img src="assets/round-bastards-logo.png" alt="" style="height:1.8rem; vertical-align:middle; margin-right:0.5rem;"><span>Dastardly Bastards</span> &nbsp;·&nbsp; Delta, Ontario</p>
+    <p><img src="assets/round-bastards-logo.png" alt="" style="height:1.8rem; vertical-align:middle; margin-right:0.5rem; border-radius:50%;"><span>Dastardly Bastards</span> &nbsp;·&nbsp; Delta, Ontario</p>
     <p style="margin-top:0.5rem; opacity:0.5;">May your rolls be high and your TPKs infrequent.</p>
   </footer>
 

@@ -212,7 +212,7 @@
 
     .game-card p {
       font-size: 0.9rem;
-      color: var(--mist);
+      color: rgba(244, 232, 193, 0.68);
       line-height: 1.6;
     }
 
@@ -251,20 +251,21 @@
     }
 
     .campaign-banner {
-      height: 6px;
-      background: linear-gradient(to right, var(--crimson), var(--ember));
+      height: 160px;
+      background-size: cover;
+      background-position: center top;
+      background-color: #0a0008;
+      position: relative;
     }
 
-    .campaign-card:nth-child(2) .campaign-banner {
-      background: linear-gradient(to right, #1a4a8b, #3a7abf);
-    }
-
-    .campaign-card:nth-child(3) .campaign-banner {
-      background: linear-gradient(to right, #2a6b2a, #4a9b4a);
-    }
-
-    .campaign-card:nth-child(4) .campaign-banner {
-      background: linear-gradient(to right, #6b2a6b, #9b4a9b);
+    .campaign-banner::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 80px;
+      background: linear-gradient(to bottom, transparent, #1a1208);
     }
 
     .campaign-body {
@@ -308,7 +309,7 @@
 
     .campaign-body p {
       font-size: 0.88rem;
-      color: var(--mist);
+      color: rgba(244, 232, 193, 0.68);
       line-height: 1.65;
     }
 
@@ -350,7 +351,7 @@
 
     .join-path p {
       font-size: 0.88rem;
-      color: var(--mist);
+      color: rgba(244, 232, 193, 0.68);
       line-height: 1.65;
     }
 
@@ -415,7 +416,7 @@
       display: block;
       margin-top: 0.75rem;
       font-size: 0.8rem;
-      color: var(--mist);
+      color: rgba(244, 232, 193, 0.68);
       letter-spacing: 0.05em;
     }
 
@@ -541,7 +542,7 @@
     <div class="campaigns-grid">
 
       <div class="campaign-card">
-        <div class="campaign-banner"></div>
+        <div class="campaign-banner" style="background-image: url('assets/campaign-strahd.jpg')"></div>
         <div class="campaign-body">
           <span class="campaign-status status-active">Active</span>
           <h3>Curse of Strahd</h3>
@@ -551,7 +552,7 @@
       </div>
 
       <div class="campaign-card">
-        <div class="campaign-banner"></div>
+        <div class="campaign-banner" style="background-image: url('assets/campaign-homebrew.jpg')"></div>
         <div class="campaign-body">
           <span class="campaign-status status-active">Active</span>
           <h3>Homebrew</h3>

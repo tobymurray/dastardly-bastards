@@ -473,6 +473,89 @@
       display: block;
     }
 
+    /* ── Events ───────────────────────────── */
+    .event-block {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    @media (max-width: 680px) {
+      .event-block { grid-template-columns: 1fr; }
+      .event-poster { max-width: 300px; margin: 0 auto; }
+    }
+
+    .event-poster img {
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid rgba(201,162,39,0.2);
+      box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+    }
+
+    .event-type-tag {
+      display: inline-block;
+      background: rgba(74,100,200,0.2);
+      border: 1px solid rgba(74,100,200,0.4);
+      color: #8eaaff;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      margin-bottom: 0.75rem;
+    }
+
+    .event-title {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      color: var(--gold);
+      margin-bottom: 0.35rem;
+      line-height: 1.1;
+    }
+
+    .event-subtitle {
+      font-size: 0.95rem;
+      color: var(--mist);
+      font-style: italic;
+      margin-bottom: 1.5rem;
+    }
+
+    .event-details-list {
+      list-style: none;
+      margin-bottom: 1.75rem;
+    }
+
+    .event-details-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.95rem;
+      color: var(--parchment);
+      opacity: 0.9;
+      margin-bottom: 0.6rem;
+    }
+
+    .event-details-list li .icon {
+      flex-shrink: 0;
+    }
+
+    .event-perks {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .event-perk {
+      background: rgba(201,162,39,0.08);
+      border: 1px solid rgba(201,162,39,0.2);
+      border-radius: 999px;
+      padding: 0.3rem 0.85rem;
+      font-size: 0.8rem;
+      color: var(--gold);
+      letter-spacing: 0.04em;
+    }
+
     /* ── Footer ───────────────────────────── */
     footer {
       border-top: 1px solid rgba(201,162,39,0.1);
@@ -507,6 +590,35 @@
     <div class="location-badge">
       📍 Delta, Ontario
     </div>
+  </div>
+
+  <!-- Upcoming Events -->
+  <div id="events" style="background: rgba(255,255,255,0.02); border-top: 1px solid rgba(201,162,39,0.1); border-bottom: 1px solid rgba(201,162,39,0.1);">
+    <section>
+      <p class="section-label">Don't miss it</p>
+      <h2 class="section-title">Upcoming Events</h2>
+      <div class="divider"></div>
+      <div class="event-block">
+        <div class="event-poster">
+          <img src="assets/event-commander-brawl.webp" alt="Commander Brawl — May 17th at Bastard Coffee House">
+        </div>
+        <div class="event-info">
+          <span class="event-type-tag">Magic: The Gathering</span>
+          <h3 class="event-title">Commander Brawl</h3>
+          <p class="event-subtitle">Only the Bold Survive the Brawl.</p>
+          <ul class="event-details-list">
+            <li><span class="icon">📅</span><span><strong>May 17th</strong></span></li>
+            <li><span class="icon">☕</span><span>Bastard Coffee House &nbsp;·&nbsp; Delta, ON</span></li>
+            <li><span class="icon">🕙</span><span>Start time: 11:00 AM</span></li>
+          </ul>
+          <div class="event-perks">
+            <span class="event-perk">✦ All levels welcome</span>
+            <span class="event-perk">✦ Free admission</span>
+          </div>
+          <a class="email-btn" href="mailto:dastardlybastardsdm@gmail.com">✉️ &nbsp; Register by Email</a>
+        </div>
+      </div>
+    </section>
   </div>
 
   <!-- Games -->

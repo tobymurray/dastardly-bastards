@@ -567,23 +567,24 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 2rem;
-      height: 2rem;
-      border-radius: 6px;
-      border: 1px solid rgba(201,162,39,0.18);
-      color: var(--mist);
-      transition: color 0.2s, border-color 0.2s, background 0.2s;
+      width: 2.25rem;
+      height: 2.25rem;
+      border-radius: 8px;
+      border: 1px solid rgba(201,162,39,0.35);
+      color: var(--parchment);
+      background: rgba(201,162,39,0.08);
+      transition: color 0.2s, border-color 0.2s, background 0.2s, transform 0.15s;
     }
 
     .social-link:hover {
-      color: var(--parchment);
-      border-color: rgba(201,162,39,0.45);
-      background: rgba(201,162,39,0.07);
+      border-color: var(--gold);
+      background: rgba(201,162,39,0.18);
+      transform: translateY(-2px);
     }
 
     .social-link svg {
-      width: 1rem;
-      height: 1rem;
+      width: 1.1rem;
+      height: 1.1rem;
       fill: currentColor;
     }
 

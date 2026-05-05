@@ -602,6 +602,41 @@
       fill: currentColor;
     }
 
+    /* ── Lightbox ─────────────────────────── */
+    .lightbox-trigger {
+      cursor: zoom-in;
+      display: block;
+    }
+
+    .lightbox-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(0,0,0,0.88);
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      cursor: zoom-out;
+    }
+
+    .lightbox-overlay.open {
+      display: flex;
+    }
+
+    .lightbox-overlay img {
+      max-width: min(480px, 100%);
+      max-height: 90vh;
+      border-radius: 8px;
+      box-shadow: 0 20px 80px rgba(0,0,0,0.8);
+      animation: lightbox-in 0.2s ease;
+    }
+
+    @keyframes lightbox-in {
+      from { opacity: 0; transform: scale(0.93); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+
     /* ── Footer ───────────────────────────── */
     footer {
       border-top: 1px solid rgba(201,162,39,0.1);
@@ -659,7 +694,9 @@
       <div class="divider"></div>
       <div class="event-block">
         <div class="event-poster">
-          <img src="assets/event-commander-brawl.webp" alt="Commander Brawl — May 17th at Bastard Coffee House">
+          <a class="lightbox-trigger" onclick="document.getElementById('poster-lightbox').classList.add('open')">
+            <img src="assets/event-commander-brawl.webp" alt="Commander Brawl — May 17th at Bastard Coffee House">
+          </a>
         </div>
         <div class="event-info">
           <span class="event-type-tag">Magic: The Gathering</span>
@@ -790,6 +827,11 @@
         </div>
       </div>
     </section>
+  </div>
+
+  <!-- Poster lightbox -->
+  <div id="poster-lightbox" class="lightbox-overlay" onclick="this.classList.remove('open')">
+    <img src="assets/event-commander-brawl.webp" alt="Commander Brawl poster">
   </div>
 
   <!-- Footer -->
